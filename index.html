@@ -6,15 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
-    <!----Font awesome cdn  font icon css -->
+    <!-- Font Awesome CDN for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
-     <div class="hero-header">
+    <!-- Hero Section -->
+    <div class="hero-header" id="home">
         <div class="wrapper">
             <header>
                 <div class="logo">
-                    <i class="fa-solid fa-a"></i>
+                    <i class="fa-solid fa-b"></i>
                     <div class="logo-text">Bennet Ramphisa</div>
                 </div>
                 <nav>
@@ -24,56 +25,118 @@
                         <span></span>
                     </div>
                     <ul class="navlinks">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Resume</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#resume">Resume</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
             </header>
             <div class="container">
-                 <div class="hero-pic">
-                    <img src="images/IMG_20240112_121726 (1).jpg" alt="profile pic">
-                 </div>
-                 <div class="hero-text">
-                    <h5>Hi I'm <span class="input">Frontend Developer</span></h5>
+                <div class="hero-pic">
+                    <img src="images/IMG_20240112_121726 (1).jpg" alt="profile picture">
+                </div>
+                <div class="hero-text">
+                    <h5>Hi, I'm <span class="input">Software Developer</span></h5>
                     <h1>Bennet Ramphisa</h1>
-                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta delectus dolorum 
-                        quibusdam maiores magni quod rem in porro, laborum, laudantium ex repellendus explicabo, 
-                        autem molestiae!
-                    </p>
-
+                    <p>Welcome to my portfolio! I am Bennet Ramphisa, an aspiring software developer<br>
+                       passionate about using technology to solve real-world problems and empower the next generation. <br>
+                       Explore my projects and skills as I strive to make a positive impact.</p>
                     <div class="btn-group">
-                       <a href="#" class="btn active">Download CV</a>
-                       <a href="#" class="btn">Contact</a>
+                        <a href="file/Bennet_Ramphisa_CV.pdf" class="btn active" target="_blank">View CV</a>
+                        <a href="#contact" class="btn">Contact</a>
                     </div>
-
                     <div class="social">
                         <a href="#"><i class="fa-brands fa-facebook"></i></a>
                         <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                         <a href="#"><i class="fa-brands fa-instagram"></i></a>
                         <a href="#"><i class="fa-brands fa-dribbble"></i></a>
-                        <a href="#"><i class="fa-brands fa-pintrest"></i></a>
+                        <a href="#"><i class="fa-brands fa-pinterest"></i></a>
                     </div>
-                 </div>
+                </div>
             </div>
         </div>
-     </div>
+    </div>
 
-     
-     <!---typed js for typing text effect-->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
-     <script>
-        /** creating button click show hide navbar **/
-        var togglebtn = document.querySelector(".togglebtn");
-var nav = document.querySelector(".navlinks");
+    <!-- Resume Section -->
+    <section id="resume" class="section-bg">
+        <div class="wrapper">
+            <h2>Resume</h2>
+            <div class="resume-content">
+                <h3>Education</h3>
+                <ul>
+                    <li><strong>Diploma in IT in Software Development</strong> - IIE Rosebank College (2021 - 2023)</li>
+                    <li><strong>National Senior Certificate</strong> - Matric (2016 - 2020)</li>
+                </ul>
+                
+                <h3>Technical Skills</h3>
+                <ul>
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>MySQL, Java, C#</li>
+                    <li>Kotlin, .Net, PHP</li>
+                </ul>
 
-togglebtn.addEventListener("click", function() {
-    this.classList.toggle("click");
-    nav.classList.toggle("open");
-});
+                <h3>Soft Skills</h3>
+                <ul>
+                    <li>Communication, Teamwork, Attention to detail</li>
+                    <li>Time management, Work ethic, Adaptability</li>
+                </ul>
+                
+                    <h3>Projetcs</h3>
+                <ul>
+                    <h3>BirdScout</h3>
+                    <li> A birding app that utilizes the eBird API to display bird hotspots and document bird sightings, and the bird details and uses GPS</li>
+                   
+                    <h3>Disaster Alleviation Foundation</h3>
+                    <li>A web app for managing disaster-related donations and facilitating aid distribution securely.</li>
+                </ul>
 
-     </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-bg">
+        <div class="wrapper">
+            <h2>Contact</h2>
+            <form id="contact-form">
+
+                <p>Get in contact with me by leasving a message below.</p>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Bennet Ramphisa. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+    <script>
+        /** Toggle navigation menu for mobile view **/
+        const togglebtn = document.querySelector(".togglebtn");
+        const navlinks = document.querySelector(".navlinks");
+
+        togglebtn.addEventListener("click", function () {
+            navlinks.classList.toggle("open");
+        });
+
+        /** Typed.js for dynamic text effect **/
+        const typed = new Typed(".input", {
+            strings: ["Frontend Developer", "Database Administrator", "Web Developer"],
+            typeSpeed: 70,
+            backSpeed: 55,
+            loop: true
+        });
+    </script>
 </body>
 </html>
