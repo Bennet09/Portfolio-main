@@ -1,6 +1,6 @@
 # Portfolio Website
 
-This is the source code for my personal portfolio website. It showcases my skills, projects, education, and experience as a software developer.
+This is the source code for my personal portfolio website. It showcases my skills, qualification, projects, education, and experience as a software developer.
 
 ## Table of Contents
 
