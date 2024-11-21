@@ -32,4 +32,4 @@ Follow these instructions to run the website locally on your computer.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/portfolio-website.git
+   git clone: https://bennet-ramphisa.netlify.app/
