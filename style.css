@@ -16,7 +16,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-top:4rem;
+    padding-top:2rem;
 }
 .container .hero-pic{
     width: 300px;
@@ -171,35 +171,40 @@ nav .navlinks li a:hover {
         display: initial;
     }
 
-    nav .navlinks {
-        position: sticky;
-        top: 0;
-        right: -100%;
-        bottom: 0;
-        width: 60%;
-        height: 100vh;
-        background-color: #222;
-        z-index: 1000;
-        box-shadow: 5px 13px 30px rgba(0, 0, 0, 0.1);
-        transition: 0.5s;
-        padding: 25px 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+   /* Sticky Navigation */
+nav {
+    position: sticky;   /* This will make the nav bar sticky */
+    top: 0;              /* The nav will stick to the top of the page */
+    z-index: 1000;       /* Ensure the nav is on top of other elements */
+    background-color: #222; /* Optional: to ensure a consistent background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: to add a shadow */
+}
 
-    nav .navlinks.open {
-        right: 0;
-    }
+/* Navigation Links */
+nav .navlinks {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 0;
+}
 
-    nav .navlinks li {
-        display: block;
-    }
+nav .navlinks li {
+    display: inline-block;
+}
 
-    nav .navlinks li a {
-        margin-bottom: 15px;
-        text-align: center;
-    }
+nav .navlinks li a {
+    color: #fff;
+    margin-right: 2.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+nav .navlinks li a:hover {
+    color: #007ced;
+}
+
 }
 
 /* Hero Section Text */
@@ -252,7 +257,7 @@ nav .navlinks li a:hover {
     color: #007ced;
 }
 
-/* Profile Image Styling */
+
 /* Profile Image Styling */
 .medium-profile-image {
     width: 150px; /* Set the size of the container */
