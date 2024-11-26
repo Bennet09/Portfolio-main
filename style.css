@@ -3,11 +3,9 @@
     box-sizing: border-box;
     font-family: Poppins, sans-serif;
     text-decoration: none;
-    margin: 0;
-    padding: 0;
 }
 
-/* Body and Container Settings */
+/* Global body settings */
 body {
     overflow-x: hidden;
     margin: 0;
@@ -18,54 +16,49 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-top: 2rem;
+    padding-top:2rem;
 }
-
-.container .hero-pic {
+.container .hero-pic{
     width: 300px;
     height: 300px;
     border-radius: 50%;
     overflow: hidden;
     border: 15px solid #444;
-    box-shadow: 5px 7px 25px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 7px 25px rgba(0,0,0,0.5);
 }
 
-/* Button Group */
-.btn-group {
-    margin: 45px 0;
+.btn-group{
+    margin:45px 0;
 }
-
-.btn-group .btn {
+.btn-group .btn{
     border-color: #d5d5d5;
-    color: #fff;
+    color:#fff;
     background-color: #333;
     padding: 12px 25px;
-    margin: 5px 0;
-    margin-right: 7px;
+    margin: 5px 0px;
+    margin-right:7px;
     border-radius: 30px;
-    border: 2px solid #e5e5e5;
-    box-shadow: 0 10px 10px -8px rgba(0, 0, 0, 0.78);
+    border:2px solid #e5e5e5;
+    box-shadow:  0 10px 10px -8px rgb(0 0 0 / 78%);
 }
-
-.btn.active {
+.btn.active{
     border-color: #007ced;
 }
-
-.hero-text .social i {
+.hero-text .social i{
     color: #e5e5e5;
     font-size: 18px;
     margin-right: 10px;
     transition: 0.5s;
 }
-
-.hero-text .social i:hover {
-    color: #007ced;
+.hero-text .social i:hover{
+    color:#007ced;
     transform: rotate(360deg);
 }
 
 /* Hero Section */
 .hero-header {
     width: 100%;
+    height: 100%;
     min-height: 100vh;
     background: #222;
     display: flex;
@@ -73,36 +66,134 @@ body {
     justify-content: center;
 }
 
-/* Header and Navigation */
+
+/* Social Icons in Section Background */
+/* Section Background Styling */
+.section-bg {
+    width: 100%;
+    height: 100vh; /* Full-screen height */
+    background: #222; /* Dark background similar to the hero section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* To allow content to be centered */
+    color: #fff; /* Make sure the text stands out on the dark background */
+}
+
+/* Social Icons in Section Background */
+.section-bg .social i {
+    color: #e5e5e5;
+    font-size: 16px; /* Decrease font size for smaller icons */
+    margin-right: 10px;
+    transition: 0.5s;
+}
+
+.section-bg .social i:hover {
+    color: #007ced;
+    transform: rotate(360deg);
+}
+
+
+
+/* Wrapper for content */
+.wrapper {
+    width: 1280px;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Style */
 header {
-    padding: 20px 0;
+    padding: 40px 0 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    position: relative;
 }
 
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: #222;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+/* Logo Icon Styling */
+.logo {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.navlinks {
+.logo i {
+    height: 35px; /* Smaller icon size */
+    width: 35px;  /* Smaller icon size */
+    background-color: #007ced;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.25rem; /* Adjust font size */
+    padding: 8px; /* Adjust padding */
+    margin-right: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Logo Text Styling */
+.logo .logo-text {
+    font-size: 22px;
+    font-weight: 500;
+    color: #fff;
+}
+
+/* Navigation Links */
+nav .navlinks {
     list-style-type: none;
     display: flex;
     justify-content: flex-end;
     padding: 0;
+    margin: 0;
 }
 
-.navlinks li {
+nav .navlinks li {
     display: inline-block;
 }
 
-.navlinks li a {
+nav .navlinks li a {
+    color: #fff;
+    margin-right: 2.5rem;
+    font-size: 1rem; /* Adjust font size */
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+nav .navlinks li a:hover {
+    color: #007ced;
+}
+
+/* Mobile View Navigation */
+@media (max-width: 768px) {
+    nav .togglebtn {
+        display: initial;
+    }
+
+   /* Sticky Navigation */
+nav {
+    position: sticky;   /* This will make the nav bar sticky */
+    top: 20;              /* The nav will stick to the top of the page */
+    z-index: 1000;       /* Ensure the nav is on top of other elements */
+    background-color: #222; /* Optional: to ensure a consistent background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: to add a shadow */
+}
+
+/* Navigation Links */
+nav .navlinks {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 0;
+}
+
+nav .navlinks li {
+    display: inline-block;
+}
+
+nav .navlinks li a {
     color: #fff;
     margin-right: 2.5rem;
     font-size: 1rem;
@@ -110,56 +201,41 @@ nav {
     transition: color 0.3s ease;
 }
 
-.navlinks li a:hover {
+nav .navlinks li a:hover {
     color: #007ced;
 }
 
-/* Mobile Navigation */
-@media (max-width: 768px) {
-    nav .togglebtn {
-        display: block;
-    }
-
-    .navlinks {
-        flex-direction: column;
-        align-items: center;
-    }
 }
 
 /* Hero Section Text */
-.hero-pic img {
+.hero-pic img{
     height: 100%;
-    width: 100%;
+    width:100%;
     transition: 0.5s;
 }
-
-.hero-pic img:hover {
+.hero-pic img:hover{
     transform: scale(1.2);
 }
-
-.hero-text {
+.hero-text{
     max-width: 500px;
     display: flex;
     flex-direction: column;
 }
-
-.hero-text h5 {
-    color: #e5e5e5;
+.hero-text h5{
+    color:#e5e5e5;
     font-size: 14px;
 }
-
-.hero-text h5 span {
-    color: #007ced;
+.hero-text h5 span{
+    color:#007ced;
     font-size: 16px;
 }
-
-.hero-text h1 {
+.hero-text h1{
     color: #007ced;
     font-size: 3rem;
 }
+.hero-text p{
+    color:#e5e5e5;
 
-.hero-text p {
-    color: #e5e5e5;
 }
 
 .hero-text .btn-group .btn:hover {
@@ -181,21 +257,24 @@ nav {
     color: #007ced;
 }
 
-/* Profile Image */
+
+/* Profile Image Styling */
 .medium-profile-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 10px solid #444;
+    width: 150px; /* Set the size of the container */
+    height: 150px; /* Ensure the height is the same as width for a perfect circle */
+    border-radius: 50%; /* Make it a circle */
+    border: 10px solid #444; /* Optional: border around the image */
     margin-top: 20px;
-    overflow: hidden;
+    overflow: hidden; /* Hide overflow to ensure the image fits the circle */
 }
 
+/* Ensure image fills the circle perfectly */
 .medium-profile-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100%; /* Make the image fill the width of the circle */
+    height: 100%; /* Make the image fill the height of the circle */
+    object-fit: cover; /* Crop the image to fit the circle */
 }
+
 
 /* Resume Section */
 .resume-content h3 {
@@ -249,14 +328,14 @@ form button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1rem; 
 }
 
 form button:hover {
     background-color: #005bb5;
 }
 
-/* Footer */
+/* Footer Styling */
 footer {
     background-color: #7c19d8;
     color: #e5e5e5;
@@ -267,3 +346,11 @@ footer {
 footer p {
     font-size: 1rem;
 }
+
+/* Ensures consistent margin/padding */
+body, html {
+    padding: 0;
+    margin: 0;
+}
+
+
