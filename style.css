@@ -146,7 +146,7 @@ nav {
     top: 0; /* Ensures it sticks to the top of the viewport */
     width: 100%; /* Ensures the nav bar spans the full width */
     z-index: 1000; /* Keeps it on top of other elements */
-    background-color: #222; /* Optional: Nav bar background */
+    background-color: #9b4ae7; /* Optional: Nav bar background */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow */
     padding: 10px 0; /* Adjust padding to your preference */
 }
@@ -305,7 +305,7 @@ form button:hover {
 
 /* Footer Styling */
 footer {
-    background-color: #7c19d8;
+    background-color: #9b4ae7;
     color: #e5e5e5;
     padding: 20px;
     text-align: center;
