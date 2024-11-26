@@ -154,7 +154,7 @@ nav {
 .navlinks {
     list-style: none;
     display: flex;
-    justify-content: center; /* Centers the navigation links */
+    justify-content: center; 
     margin: 0;
     padding: 0;
 }
