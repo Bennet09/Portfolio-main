@@ -141,71 +141,39 @@ header {
 }
 
 /* Navigation Links */
-nav .navlinks {
-    list-style-type: none;
-    display: flex;
-    justify-content: flex-end;
-    padding: 0;
-    margin: 0;
-}
-
-nav .navlinks li {
-    display: inline-block;
-}
-
-nav .navlinks li a {
-    color: #fff;
-    margin-right: 2.5rem;
-    font-size: 1rem; /* Adjust font size */
-    text-transform: uppercase;
-    transition: color 0.3s ease;
-}
-
-nav .navlinks li a:hover {
-    color: #007ced;
-}
-
-/* Mobile View Navigation */
-@media (max-width: 768px) {
-    nav .togglebtn {
-        display: initial;
-    }
-
-   /* Sticky Navigation */
 nav {
-    position: top;   /* This will make the nav bar sticky */
-    top: 0;              /* The nav will stick to the top of the page */
-    z-index: 1000;       /* Ensure the nav is on top of other elements */
-    background-color: #222; /* Optional: to ensure a consistent background */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: to add a shadow */
+    position: fixed; /* Makes the nav bar fixed at the top */
+    top: 0; /* Ensures it sticks to the top of the viewport */
+    width: 100%; /* Ensures the nav bar spans the full width */
+    z-index: 1000; /* Keeps it on top of other elements */
+    background-color: #222; /* Optional: Nav bar background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow */
+    padding: 10px 0; /* Adjust padding to your preference */
 }
 
-/* Navigation Links */
-nav .navlinks {
-    list-style-type: none;
+.navlinks {
+    list-style: none;
     display: flex;
-    justify-content: flex-end;
-    padding: 0;
+    justify-content: center; /* Centers the links */
     margin: 0;
+    padding: 0;
 }
 
-nav .navlinks li {
-    display: inline-block;
+.navlinks li {
+    margin: 0 15px; /* Adds spacing between links */
 }
 
-nav .navlinks li a {
+.navlinks li a {
     color: #fff;
-    margin-right: 2.5rem;
     font-size: 1rem;
     text-transform: uppercase;
     transition: color 0.3s ease;
 }
 
-nav .navlinks li a:hover {
+.navlinks li a:hover {
     color: #007ced;
 }
 
-}
 
 /* Hero Section Text */
 .hero-pic img{
