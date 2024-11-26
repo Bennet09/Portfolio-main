@@ -19,27 +19,19 @@
                     <div class="logo-text">Bennet Ramphisa</div>
                 </div>
                 <nav>
-                    <div class="togglebtn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <ul class="navlinks">
+                    <!-- Mobile Menu Toggle Button -->
+                    <button class="menu-toggle" onclick="toggleMenu()">
+                        <span class="menu-icon">☰</span>
+                        <span class="close-icon" style="display: none;">✕</span>
+                    </button>
+                    <!-- Navigation Links -->
+                    <ul id="navbarLinks" class="navlinks">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#resume">Resume</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
-
-                <nav>
-                    <div class="ham-menu">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </div>
-                  </nav>
-
             </header>
             <div class="container">
                 <div class="hero-pic">
@@ -58,7 +50,6 @@
                     <div class="social">
                         <a href="https://github.com/dashboard"><i class="fa-brands fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/bennet-ramphisa-26b94a20a"><i class="fa-brands fa-linkedin"></i></a>
-
                     </div>
                 </div>
             </div>
@@ -66,34 +57,27 @@
     </div>
 
     <!-- About Me Section -->
-<section id="about" class="section-bg">
-    <div class="wrapper">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>
-                    Hello! I'm Bennet Ramphisa, a passionate and dedicated software developer with a love for creating innovative 
-                    solutions through technology. I specialize in full-stack development, bringing a combination of technical 
-                    expertise and creative problem-solving to every project I work on.
-                </p>
-                <p>
-                    My journey into software development started with my curiosity about how technology can improve lives. 
-                    Since then, I've been developing projects that aim to solve real-world problems, including my signature 
-                    projects like the BirdScout app and the Disaster Alleviation Foundation system. I thrive on challenges and 
-                    enjoy learning new tools and technologies to enhance my skills further.
-                </p>
-                <p>
-                    In my free time, I love exploring new places, birdwatching, and contributing to open-source projects. 
-                    My goal is to use my skills to make a meaningful impact in the tech industry and beyond.
-                </p>
-            </div>
-            <div class="about-image">
-                <img src="images/WhatsApp.jpeg" alt="About Bennet Ramphisa">
+    <section id="about" class="section-bg">
+        <div class="wrapper">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Hello! I'm Bennet Ramphisa, a passionate and dedicated software developer with a love for creating innovative solutions through technology. I specialize in full-stack development, bringing a combination of technical expertise and creative problem-solving to every project I work on.
+                    </p>
+                    <p>
+                        My journey into software development started with my curiosity about how technology can improve lives. Since then, I've been developing projects that aim to solve real-world problems, including my signature projects like the BirdScout app and the Disaster Alleviation Foundation system. I thrive on challenges and enjoy learning new tools and technologies to enhance my skills further.
+                    </p>
+                    <p>
+                        In my free time, I love exploring new places, birdwatching, and contributing to open-source projects. My goal is to use my skills to make a meaningful impact in the tech industry and beyond.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="images/WhatsApp.jpeg" alt="About Bennet Ramphisa">
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Resume Section -->
     <section id="resume" class="section-bg">
@@ -119,18 +103,15 @@
                     <li>Time management, Work ethic, Adaptability</li>
                 </ul>
                 
-                    <h3>Projetcs</h3>
+                <h3>Projects</h3>
                 <ul>
                     <h3>BirdScout</h3>
-                    <li> A birding app that utilizes the eBird API to display bird hotspots and document bird sightings, and the bird details and uses GPS</li>
-                   
+                    <li>A birding app that utilizes the eBird API to display bird hotspots and document bird sightings, and the bird details and uses GPS</li>
                     <h3>Disaster Alleviation Foundation</h3>
                     <li>A web app for managing disaster-related donations and facilitating aid distribution securely.</li>
-
                     <h3>Other Projects</h3>
                     <li>Others you can find on my Github.</li>
                 </ul>
-
             </div>
         </div>
     </section>
@@ -140,15 +121,11 @@
         <div class="wrapper">
             <h2>Contact</h2>
             <form id="contact-form">
-
-                <p>Get in contact with me by leasving a message below.</p>
-
+                <p>Get in contact with me by leaving a message below.</p>
                 <label for="name">Name:</label>
                 <input type="text" id="name" required>
-
                 <label for="email">Email:</label>
                 <input type="email" id="email" required>
-
                 <label for="message">Message:</label>
                 <textarea id="message" rows="5" required></textarea>
                 <button type="submit">Send Message</button>
@@ -164,13 +141,49 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
     <script>
         /** Toggle navigation menu for mobile view **/
-        const togglebtn = document.querySelector(".togglebtn");
-        const navlinks = document.querySelector(".navlinks");
-        
+        function toggleMenu() {
+            const navbarLinks = document.getElementById("navbarLinks");
+            const menuToggle = document.querySelector(".menu-toggle");
+            
+            if (navbarLinks.classList.contains("show")) {
+                // Closing animation
+                navbarLinks.style.opacity = "0";
+                navbarLinks.style.transform = "translateY(-20px)";
+                menuToggle.classList.remove("active");
+                setTimeout(() => {
+                    navbarLinks.classList.remove("show");
+                    menuToggle.querySelector(".close-icon").style.display = "none";
+                    menuToggle.querySelector(".menu-icon").style.display = "block";
+                }, 300);
+            } else {
+                // Opening animation
+                navbarLinks.classList.add("show");
+                navbarLinks.style.opacity = "1";
+                navbarLinks.style.transform = "translateY(0)";
+                menuToggle.classList.add("active");
+                menuToggle.querySelector(".menu-icon").style.display = "none";
+                menuToggle.querySelector(".close-icon").style.display = "block";
+            }
 
-        togglebtn.addEventListener("click", function () {
-            navlinks.classList.toggle("open");
-        });
+            // Add click event listeners to all navbar links to close the menu
+            document.querySelectorAll('.navbar-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    const navbarLinks = document.getElementById("navbarLinks");
+                    const menuToggle = document.querySelector(".menu-toggle");
+
+                    // Close the menu
+                    navbarLinks.style.opacity = "0";
+                    navbarLinks.style.transform = "translateY(-20px)";
+                    menuToggle.classList.remove("active");
+
+                    setTimeout(() => {
+                        navbarLinks.classList.remove("show");
+                        menuToggle.querySelector(".close-icon").style.display = "none";
+                        menuToggle.querySelector(".menu-icon").style.display = "block";
+                    }, 300);
+                });
+            });
+        }
 
         /** Typed.js for dynamic text effect **/
         const typed = new Typed(".input", {
@@ -179,16 +192,6 @@
             backSpeed: 55,
             loop: true
         });
-
-        const hamMenu = document.querySelector(".ham-menu");
-
-const offScreenMenu = document.querySelector(".off-screen-menu");
-
-hamMenu.addEventListener("click", () => {
-  hamMenu.classList.toggle("active");
-  offScreenMenu.classList.toggle("active");
-});
-
     </script>
 </body>
 </html>
