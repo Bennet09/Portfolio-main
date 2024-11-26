@@ -341,7 +341,6 @@ form button:hover {
     background-color: #005bb5;
 }
 
-
 /* Footer Styling */
 footer {
     background-color: #007ced;
@@ -370,4 +369,4 @@ body, html {
         width: 80%;  /* Make buttons take up 80% of the container width */
         margin-bottom: 15px;  /* Add space between buttons */
     }
-}
+} 
