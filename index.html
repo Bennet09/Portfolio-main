@@ -136,14 +136,13 @@
             </form>
         </div>
         </div>
-
-    </div>
-    
+    </div>   
     </section>   
     <footer>
         <p>&copy; 2024 Bennet Ramphisa. All rights reserved.</p>
     </footer>
     <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
     <script>
         /** Toggle navigation menu for mobile view **/
         function toggleMenu() {
@@ -162,6 +161,12 @@
                 menuToggle.querySelector(".close-icon").style.display = "block";
             }
         }
+        const typed = new Typed(".input", {
+            strings: ["Frontend Developer", "Database Administrator", "Web Developer"],
+            typeSpeed: 70,
+            backSpeed: 55,
+            loop: true
+        });
     </script>
 
 </body>

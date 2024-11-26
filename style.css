@@ -141,15 +141,22 @@ header {
 
 /* Navigation Links */
 nav {
-    position: fixed; /* Keeps the nav bar fixed at the top */
-    top: 0; /* Ensures it sticks to the top of the viewport */
-    width: 100%; /* Spans the full width of the page */
-    z-index: 1000; /* Ensures it is above other elements */
-    background-color: #007ced; /* Matches footer background color */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
-    padding: 8px 0; /* Reduces height by adjusting vertical padding */
+    position: absolute; /* Absolute positioning */
+    top: 0; /* Place it at the very top */
+    left: 50%; /* Align horizontally */
+    transform: translateX(-50%); /* Center the navbar */
+    z-index: 1000; /* Keep it above all content */
+    background-color: #007ced; /* Same color as the footer */
+    padding: 20px 40px; /* Increased padding for better visual effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow for separation */
+    border-radius: 10px; /* Optional: Rounded edges for style */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease; /* Smooth animation for changes */
 }
 
+/* Navigation Links */
 .navlinks {
     list-style: none;
     display: flex;
@@ -159,18 +166,57 @@ nav {
 }
 
 .navlinks li {
-    margin: 0 15px; /* Adds spacing between the links */
+    margin: 0 15px; /* Adds spacing between links */
 }
 
 .navlinks li a {
-    color: #fff; /* White text for contrast */
+    color: #e5e5e5; /* Matches footer text color */
     font-size: 1rem;
     text-transform: uppercase;
     transition: color 0.3s ease;
 }
 
 .navlinks li a:hover {
-    color: #e5e5e5; /* Slightly lighter hover effect */
+    color: #ffffff; /* Slight hover effect */
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    nav {
+        width: 100%; /* Full-width for small screens */
+        left: 0;
+        transform: none; /* Remove centering on mobile */
+        border-radius: 0; /* Remove rounded edges */
+        padding: 10px 20px;
+    }
+
+    .navlinks {
+        flex-direction: column; /* Stack items vertically */
+        justify-content: flex-start; /* Align items to the left */
+    }
+
+    .navlinks li {
+        padding: 10px 0;
+    }
+}
+
+    .navlinks a {
+        font-size: 18px;
+    }
+
+    .menu-toggle .menu-icon,
+    .menu-toggle .close-icon {
+        transition: all 0.3s ease;
+    }
+
+    .menu-toggle.active .menu-icon {
+        display: none;
+    }
+
+    .menu-toggle.active .close-icon {
+        display: inline !important;
+    }
+
 }
 
 /* About Me Section */
@@ -358,15 +404,3 @@ body, html {
     padding: 0;
     margin: 0;
 }
-
-@media (max-width: 600px) {
-    .btn-group {
-        flex-direction: column;  /* Stack the buttons vertically */
-        align-items: center;  /* Center-align the buttons */
-    }
-
-    .btn-group .btn {
-        width: 80%;  /* Make buttons take up 80% of the container width */
-        margin-bottom: 15px;  /* Add space between buttons */
-    }
-} 
