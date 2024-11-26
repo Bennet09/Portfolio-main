@@ -173,8 +173,8 @@ nav .navlinks li a:hover {
 
    /* Sticky Navigation */
 nav {
-    position: sticky;   /* This will make the nav bar sticky */
-    top: 20;              /* The nav will stick to the top of the page */
+    position: top;   /* This will make the nav bar sticky */
+    top: 0;              /* The nav will stick to the top of the page */
     z-index: 1000;       /* Ensure the nav is on top of other elements */
     background-color: #222; /* Optional: to ensure a consistent background */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: to add a shadow */
