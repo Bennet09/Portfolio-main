@@ -63,13 +63,17 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        Hello! I'm Bennet Ramphisa, a passionate and dedicated software developer with a love for creating innovative solutions through technology. I specialize in full-stack development, bringing a combination of technical expertise and creative problem-solving to every project I work on.
+                        Hello! I'm Bennet Ramphisa, a passionate and dedicated software developer with a love for creating innovative solutions through technology.<br>
+                         I specialize in full-stack development, bringing a combination of technical expertise and creative problem-solving to every project I work on.
                     </p>
                     <p>
-                        My journey into software development started with my curiosity about how technology can improve lives. Since then, I've been developing projects that aim to solve real-world problems, including my signature projects like the BirdScout app and the Disaster Alleviation Foundation system. I thrive on challenges and enjoy learning new tools and technologies to enhance my skills further.
+                        My journey into software development started with my curiosity about how technology can improve lives. Since then,<br>
+                        I've been developing projects that aim to solve real-world problems, including my signature projects like the BirdScout app and the Disaster Alleviation Foundation system. <br>
+                        I thrive on challenges and enjoy learning new tools and technologies to enhance my skills further.
                     </p>
                     <p>
-                        In my free time, I love exploring new places, birdwatching, and contributing to open-source projects. My goal is to use my skills to make a meaningful impact in the tech industry and beyond.
+                        In my free time, I love exploring new places, birdwatching, and contributing to open-source projects.<br>
+                         My goal is to use my skills to make a meaningful impact in the tech industry and beyond.
                     </p>
                 </div>
                 <div class="about-image">
@@ -121,7 +125,7 @@
         <div class="wrapper">
             <h2>Contact</h2>
             <form id="contact-form">
-                <p>Get in contact with me by leaving a message below.</p>
+                <p>Get in contact with me by leaving a message below:</p>
                 <label for="name">Name:</label>
                 <input type="text" id="name" required>
                 <label for="email">Email:</label>
@@ -131,67 +135,34 @@
                 <button type="submit">Send Message</button>
             </form>
         </div>
-    </section>
+        </div>
 
+    </div>
+    
+    </section>   
     <footer>
         <p>&copy; 2024 Bennet Ramphisa. All rights reserved.</p>
     </footer>
-
     <!-- JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
     <script>
         /** Toggle navigation menu for mobile view **/
         function toggleMenu() {
             const navbarLinks = document.getElementById("navbarLinks");
             const menuToggle = document.querySelector(".menu-toggle");
-            
+
             if (navbarLinks.classList.contains("show")) {
-                // Closing animation
-                navbarLinks.style.opacity = "0";
-                navbarLinks.style.transform = "translateY(-20px)";
-                menuToggle.classList.remove("active");
-                setTimeout(() => {
-                    navbarLinks.classList.remove("show");
-                    menuToggle.querySelector(".close-icon").style.display = "none";
-                    menuToggle.querySelector(".menu-icon").style.display = "block";
-                }, 300);
+                // Close menu
+                navbarLinks.classList.remove("show");
+                menuToggle.querySelector(".close-icon").style.display = "none";
+                menuToggle.querySelector(".menu-icon").style.display = "block";
             } else {
-                // Opening animation
+                // Open menu
                 navbarLinks.classList.add("show");
-                navbarLinks.style.opacity = "1";
-                navbarLinks.style.transform = "translateY(0)";
-                menuToggle.classList.add("active");
                 menuToggle.querySelector(".menu-icon").style.display = "none";
                 menuToggle.querySelector(".close-icon").style.display = "block";
             }
-
-            // Add click event listeners to all navbar links to close the menu
-            document.querySelectorAll('.navbar-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    const navbarLinks = document.getElementById("navbarLinks");
-                    const menuToggle = document.querySelector(".menu-toggle");
-
-                    // Close the menu
-                    navbarLinks.style.opacity = "0";
-                    navbarLinks.style.transform = "translateY(-20px)";
-                    menuToggle.classList.remove("active");
-
-                    setTimeout(() => {
-                        navbarLinks.classList.remove("show");
-                        menuToggle.querySelector(".close-icon").style.display = "none";
-                        menuToggle.querySelector(".menu-icon").style.display = "block";
-                    }, 300);
-                });
-            });
         }
-
-        /** Typed.js for dynamic text effect **/
-        const typed = new Typed(".input", {
-            strings: ["Frontend Developer", "Database Administrator", "Web Developer"],
-            typeSpeed: 70,
-            backSpeed: 55,
-            loop: true
-        });
     </script>
+
 </body>
 </html>
