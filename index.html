@@ -31,6 +31,15 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
+
+                <nav>
+                    <div class="ham-menu">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </nav>
+
             </header>
             <div class="container">
                 <div class="hero-pic">
@@ -157,6 +166,7 @@
         /** Toggle navigation menu for mobile view **/
         const togglebtn = document.querySelector(".togglebtn");
         const navlinks = document.querySelector(".navlinks");
+        
 
         togglebtn.addEventListener("click", function () {
             navlinks.classList.toggle("open");
@@ -169,6 +179,16 @@
             backSpeed: 55,
             loop: true
         });
+
+        const hamMenu = document.querySelector(".ham-menu");
+
+const offScreenMenu = document.querySelector(".off-screen-menu");
+
+hamMenu.addEventListener("click", () => {
+  hamMenu.classList.toggle("active");
+  offScreenMenu.classList.toggle("active");
+});
+
     </script>
 </body>
 </html>
