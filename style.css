@@ -149,6 +149,7 @@ nav {
     background-color: #007ced; /* Optional: Nav bar background */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow */
     padding: 10px 0; /* Adjust padding to your preference */
+    text-align: center;
 }
 
 .navlinks {
