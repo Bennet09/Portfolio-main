@@ -85,8 +85,8 @@ body {
         width: 100%;
         min-height: 100vh;
         background: #222;
-        padding: 80px 0;
-        margin-bottom: 40px;
+        margin-bottom: 0;
+        padding: 80px 0
     }
   
     
@@ -177,6 +177,7 @@ body {
     /* Make sure other sections flow correctly */
 .section-bg {
     margin-top: 0;
+    color: #ffffff;
 }
        
     /* Enhanced navbar styling */
@@ -241,16 +242,21 @@ body {
 }
 
 #about {
-    display: block; /* Changed from 'none' to 'block' */
-    padding-top: 120px; /* Increased padding for better spacing */
-    scroll-margin-top: 60px; /* Accounts for fixed navbar when scrolling */
+    display: block;
+    padding: 150px 0 40px; /* Increase top padding to push content lower */
+    margin: 0;
+    background: #222;
 }
+
 
  /* About section spacing */
 .about-content {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
     gap: 40px;
     padding: 30px 0;
 }
@@ -262,7 +268,7 @@ body {
 
 /* Spacing between sections */
 #about, #resume, #contact {
-    padding-top: 100px;
+    padding-top: 160px;
     margin-top: -60px;
 }
 
@@ -420,12 +426,9 @@ body {
 }
 
 .resume-content ul li::before {
-    content: "•";
-    color: #007ced;
-    position: absolute;
-    left: 0;
-    font-size: 1.2em;
+    content: none; /* Removes the dots */
 }
+
 
 /* Resume Section Responsive Design */
 @media (max-width: 768px) {
@@ -493,11 +496,13 @@ footer {
     color: #e5e5e5;
     padding: 20px;
     text-align: center;
+    margin-top: 0;
+    border-top: none;
 }
 
 footer p {
     font-size: 1rem;
-    color: #e5e5e5;  /* Ensuring text color remains visible */
+    margin: 0;
 }
 
       
