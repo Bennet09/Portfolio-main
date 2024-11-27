@@ -1,15 +1,26 @@
 /* Global body settings */
+*{
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     overflow-x: hidden;
-     margin: 0;
+    margin: 0;
     padding: 0;
+    padding-top: 60px;
 }
        
 .container {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-top:2rem;
+    padding-top: 2rem;
+    margin: 0 20px;
+    gap: 40px;
 
 }
 .container .hero-pic{
@@ -19,11 +30,13 @@ body {
     overflow: hidden;
     border: 15px solid #444;
     box-shadow: 5px 7px 25px rgba(0,0,0,0.5);
+    margin: 20px;
 }
     
     
 .btn-group{
-     margin:45px 0;
+    margin:45px 0;
+    gap: 15px;   
 }
 
 .btn-group .btn{
@@ -98,7 +111,7 @@ body {
     width: 1280px;
     max-width: 95%;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
 }
     
     /* Header Style */
@@ -188,64 +201,37 @@ body {
     color: #222;
 }
     
+/* Hide menu toggle button by default */
 .menu-toggle {
-    display: none; /* Hide menu toggle by default on desktop */
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
 }
 
-.navlinks {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-}
-
-/* Section spacing */
-section {
-    padding: 80px 0;
-    margin-bottom: 40px;
-}
-
-/* Content spacing */
-.wrapper > * {
-    margin-bottom: 40px;
-}
-/* Mobile styles */
+/* Mobile View Styles */
 @media (max-width: 768px) {
-    /* Show menu toggle button on mobile */
     .menu-toggle {
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 15px;
-        background: none;
-        border: none;
-        color: white;
-        font-size: 24px;
-        cursor: pointer;
-        z-index: 1001;
+        display: block; /* Show menu toggle button on mobile */
     }
 
-    /* Navigation menu styling for mobile */
     .navlinks {
-        display: none;
-        flex-direction: column;
+        display: none; /* Hide navigation links by default on mobile */
         width: 100%;
-        background-color: rgba(0, 124, 237, 0.95);
         position: absolute;
-        top: 60px;
+        top: 100%;
         left: 0;
-        padding: 20px 0;
+        background-color: rgba(0, 124, 237, 0.95);
+        padding: 20px;
     }
 
     .navlinks.show {
-        display: flex;
+        display: flex; /* Show navigation links when .show class is added */
     }
 
-    .navlinks li {
-        margin: 10px 0;
-    }
-
-    /* Stack content vertically on mobile */
     .container {
         flex-direction: column;
         text-align: center;
@@ -254,15 +240,22 @@ section {
     .hero-text {
         margin-top: 30px;
     }
-
-    .about-content {
-        flex-direction: column;
-    }
-
-    .about-image {
-        margin-top: 30px;
-    }
 }
+
+
+ /* About section spacing */
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    padding: 30px 0;
+}
+
+.about-image {
+    margin-top: 30px;
+}
+
 
 /* Spacing between sections */
 #about, #resume, #contact {
@@ -388,37 +381,33 @@ section {
     height: 100%; /* Make the image fill the height of the circle */
     object-fit: cover; /* Crop the image to fit the circle */
     }
-    
-    
+  
+    /* Resume section spacing */
+.resume-content {
+    padding: 30px 0;
+} 
     
     /* Resume Section */
 .resume-content h3 {
-    font-size: 1.5rem;
-    color: #fff;
-    margin-top: 20px;
-    border-bottom: 2px solid #007ced;
-    padding-bottom: 10px;
-    }
+    margin: 30px 0 20px 0;
+}
     
     
 .resume-content ul {
-    list-style: none;
     margin: 20px 0;
-    padding-left: 20px;
-    }
-    
-    
+    padding-left: 40px;
+}
+       
 .resume-content ul li {
-    font-size: 1rem;
-    color: #e5e5e5;
-    }
+    margin-bottom: 15px;
+}
     
     
     /* Contact Section */
 form {
     max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 40px auto;
+    padding: 40px;
     background-color: #333;
     border-radius: 8px;
 }
@@ -456,20 +445,20 @@ form button {
 form button:hover {
     background-color: #005bb5;
 }
-    
-    
-    /* Footer Styling */
+        
+/* Footer Styling */
 footer {
-    background-color: #007ced;
+    background-color: #005bb5;  
     color: #e5e5e5;
     padding: 20px;
     text-align: center;
 }
-    
-    
+
 footer p {
     font-size: 1rem;
+    color: #e5e5e5;  /* Ensuring text color remains visible */
 }
+
       
     /* Ensures consistent margin/padding */
 body, html {
