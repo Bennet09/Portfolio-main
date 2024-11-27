@@ -1,35 +1,31 @@
-/* Global Reset */
-* {
-    box-sizing: border-box;
-    font-family: Poppins, sans-serif;
-    text-decoration: none;
-}
-
 /* Global body settings */
 body {
     overflow-x: hidden;
-    margin: 0;
+     margin: 0;
     padding: 0;
 }
-
+       
 .container {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding-top:2rem;
+
 }
 .container .hero-pic{
     width: 300px;
-    height: 300px;
+     height: 300px;
     border-radius: 50%;
     overflow: hidden;
     border: 15px solid #444;
     box-shadow: 5px 7px 25px rgba(0,0,0,0.5);
 }
-
+    
+    
 .btn-group{
-    margin:45px 0;
+     margin:45px 0;
 }
+
 .btn-group .btn{
     border-color: #d5d5d5;
     color:#fff;
@@ -39,23 +35,26 @@ body {
     margin-right:7px;
     border-radius: 30px;
     border:2px solid #e5e5e5;
-    box-shadow:  0 10px 10px -8px rgb(0 0 0 / 78%);
+    box-shadow: 0 10px 10px -8px rgb(0 0 0 / 78%);
 }
+
 .btn.active{
     border-color: #007ced;
 }
+
 .hero-text .social i{
     color: #e5e5e5;
     font-size: 18px;
     margin-right: 10px;
     transition: 0.5s;
 }
+
 .hero-text .social i:hover{
     color:#007ced;
     transform: rotate(360deg);
 }
-
-/* Hero Section */
+ 
+    /* Hero Section */
 .hero-header {
     width: 100%;
     height: 100%;
@@ -65,10 +64,9 @@ body {
     align-items: center;
     justify-content: center;
 }
-
-
-/* Social Icons in Section Background */
-/* Section Background Styling */
+    
+    /* Social Icons in Section Background */
+    /* Section Background Styling */
 .section-bg {
     width: 100%;
     height: 100vh; /* Full-screen height */
@@ -79,30 +77,31 @@ body {
     position: relative; /* To allow content to be centered */
     color: #fff; /* Make sure the text stands out on the dark background */
 }
-
-/* Social Icons in Section Background */
+  
+    
+    /* Social Icons in Section Background */
 .section-bg .social i {
     color: #e5e5e5;
     font-size: 16px; /* Decrease font size for smaller icons */
     margin-right: 10px;
     transition: 0.5s;
 }
-
+       
 .section-bg .social i:hover {
     color: #007ced;
     transform: rotate(360deg);
 }
-
-
-/* Wrapper for content */
+       
+    
+    /* Wrapper for content */
 .wrapper {
     width: 1280px;
     max-width: 95%;
     margin: 0 auto;
     padding: 0 20px;
 }
-
-/* Header Style */
+    
+    /* Header Style */
 header {
     padding: 40px 0 30px;
     display: flex;
@@ -110,17 +109,17 @@ header {
     align-items: center;
     flex-wrap: wrap;
 }
-
-/* Logo Icon Styling */
+     
+    /* Logo Icon Styling */
 .logo {
     display: inline-flex;
     justify-content: center;
     align-items: center;
 }
-
+       
 .logo i {
     height: 35px; /* Smaller icon size */
-    width: 35px;  /* Smaller icon size */
+    width: 35px; /* Smaller icon size */
     background-color: #007ced;
     border-radius: 50%;
     color: #fff;
@@ -131,42 +130,68 @@ header {
     cursor: pointer;
     text-align: center;
 }
-
-/* Logo Text Styling */
+      
+    /* Logo Text Styling */
 .logo .logo-text {
-    font-size: 22px;
-    font-weight: 500;
-    color: #fff;
+   font-size: 22px;
+   font-weight: 500;
+   color: #fff;
 }
-
-/* Fixed Navigation Bar */
+    
+    
+    /* Fixed Navigation Bar */
 nav {
-    position: fixed;  /* Change from absolute to fixed */
+    position: fixed; /* Change from absolute to fixed */
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 124, 237, 0.95);  /* Slightly transparent background */
+    background-color: rgba(0, 124, 237, 0.95); /* Slightly transparent background */
     padding: 15px 40px;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-
-/* Add padding to the body to prevent content from hiding behind fixed navbar */
+    
+    
+    /* Add padding to the body to prevent content from hiding behind fixed navbar */
 body {
-    padding-top: 60px;  /* Adjust this value based on your navbar height */
+    padding-top: 60px; /* Adjust this value based on your navbar height */
 }
-
-/* Adjust hero section to account for fixed navbar */
+    
+    
+    /* Adjust hero section to account for fixed navbar */
 .hero-header {
-    margin-top: -60px;  /* Negative margin to offset body padding */
+    margin-top: -60px; /* Negative margin to offset body padding */
 }
-
-/* Make sure other sections flow correctly */
+     
+    /* Make sure other sections flow correctly */
 .section-bg {
     margin-top: 0;
 }
+       
+    /* Enhanced navbar styling */
+.navlinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+    
+    
+.navlinks li a {
+    color: #ffffff;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+    
+    
+.navlinks li a:hover {
+    color: #222;
+}
+    
+.menu-toggle {
+    display: none; /* Hide menu toggle by default on desktop */
+}
 
-/* Enhanced navbar styling */
 .navlinks {
     display: flex;
     justify-content: center;
@@ -174,47 +199,53 @@ body {
     gap: 30px;
 }
 
-.navlinks li a {
-    color: #ffffff;
-    font-weight: 500;
-    transition: all 0.3s ease;
+/* Section spacing */
+section {
+    padding: 80px 0;
+    margin-bottom: 40px;
 }
 
-.navlinks li a:hover {
-    color: #222;
+/* Content spacing */
+.wrapper > * {
+    margin-bottom: 40px;
 }
-
-/* Hide menu toggle button by default */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 5px;
-}
-
-/* Mobile View Styles */
+/* Mobile styles */
 @media (max-width: 768px) {
+    /* Show menu toggle button on mobile */
     .menu-toggle {
-        display: block; /* Show menu toggle button on mobile */
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1001;
     }
 
+    /* Navigation menu styling for mobile */
     .navlinks {
-        display: none; /* Hide navigation links by default on mobile */
+        display: none;
+        flex-direction: column;
         width: 100%;
-        position: absolute;
-        top: 100%;
-        left: 0;
         background-color: rgba(0, 124, 237, 0.95);
-        padding: 20px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px 0;
     }
 
     .navlinks.show {
-        display: flex; /* Show navigation links when .show class is added */
+        display: flex;
     }
 
+    .navlinks li {
+        margin: 10px 0;
+    }
+
+    /* Stack content vertically on mobile */
     .container {
         flex-direction: column;
         text-align: center;
@@ -223,102 +254,124 @@ body {
     .hero-text {
         margin-top: 30px;
     }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image {
+        margin-top: 30px;
+    }
 }
 
+/* Spacing between sections */
+#about, #resume, #contact {
+    padding-top: 100px;
+    margin-top: -60px;
+}
 
-
-/* About Me Section */
+    /* About Me Section */
 #about {
     padding: 50px 20px;
     background-color: #222; /* Same as hero section background */
-}
-
+    }
+    
+    
 #about h2 {
     text-align: left;
     margin-bottom: 20px;
     font-size: 2rem;
-}
-
+    }
+    
+    
 .about-content {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 20px;
-}
-
+    }
+    
+    
 .about-text {
     flex: 1;
     font-size: 1.1rem;
     line-height: 1.6;
     color: #e5e5e5; /* Ensure the text is readable */
-}
-
+    }
+    
+    
 .about-image {
     flex: 1;
     text-align: center;
-}
-
+    }
+    
+    
 .about-image img {
-   border-radius: 15px;
+    border-radius: 15px;
     width: 250px; /* Adjust height for oval shape */
     height: 250px; /* Ensure image fills the container without distortion */
     object-fit: contain; /* Create an oval shape */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better effect */
-}
+    }
 
-
-/* Hero Section Text */
+    
+    /* Hero Section Text */
 .hero-pic img{
     height: 100%;
     width:100%;
     transition: 0.5s;
-}
+    }
+
 .hero-pic img:hover{
     transform: scale(1.2);
-}
+    }
+
 .hero-text{
     max-width: 500px;
     display: flex;
     flex-direction: column;
-}
+    }
+
 .hero-text h5{
     color:#e5e5e5;
     font-size: 14px;
-}
+    }
+
 .hero-text h5 span{
     color:#007ced;
     font-size: 16px;
-}
+    }
+
 .hero-text h1{
     color: #007ced;
     font-size: 3rem;
-}
+    }
+
 .hero-text p{
     color:#e5e5e5;
-
-}
-
+    
+    }
+       
 .hero-text .btn-group .btn:hover {
     background-color: #005bb5;
-}
-
+    }   
+    
 .hero-text .social {
     margin-top: 20px;
-}
-
+    }
+      
 .hero-text .social a {
     margin: 0 10px;
     color: #e5e5e5;
     font-size: 20px;
     transition: color 0.3s ease;
-}
-
+    }
+       
 .hero-text .social a:hover {
     color: #007ced;
-}
-
-
-/* Profile Image Styling */
+    }
+    
+    /* Profile Image Styling */
 .medium-profile-image {
     width: 150px; /* Set the size of the container */
     height: 150px; /* Ensure the height is the same as width for a perfect circle */
@@ -327,36 +380,41 @@ body {
     margin-top: 20px;
     overflow: hidden; /* Hide overflow to ensure the image fits the circle */
 }
-
-/* Ensure image fills the circle perfectly */
+    
+    
+    /* Ensure image fills the circle perfectly */
 .medium-profile-image img {
     width: 100%; /* Make the image fill the width of the circle */
     height: 100%; /* Make the image fill the height of the circle */
     object-fit: cover; /* Crop the image to fit the circle */
-}
-
-
-/* Resume Section */
+    }
+    
+    
+    
+    /* Resume Section */
 .resume-content h3 {
     font-size: 1.5rem;
     color: #fff;
     margin-top: 20px;
     border-bottom: 2px solid #007ced;
     padding-bottom: 10px;
-}
-
+    }
+    
+    
 .resume-content ul {
     list-style: none;
     margin: 20px 0;
     padding-left: 20px;
-}
-
+    }
+    
+    
 .resume-content ul li {
     font-size: 1rem;
     color: #e5e5e5;
-}
-
-/* Contact Section */
+    }
+    
+    
+    /* Contact Section */
 form {
     max-width: 600px;
     margin: 0 auto;
@@ -364,13 +422,15 @@ form {
     background-color: #333;
     border-radius: 8px;
 }
-
+    
+    
 form label {
     display: block;
     margin-bottom: 8px;
     color: #fff;
 }
-
+    
+    
 form input, form textarea {
     width: 100%;
     padding: 10px;
@@ -380,7 +440,8 @@ form input, form textarea {
     background-color: #222;
     color: #fff;
 }
-
+    
+    
 form button {
     background-color: #007ced;
     color: #fff;
@@ -388,26 +449,29 @@ form button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1rem; 
+    font-size: 1rem;
 }
-
+    
+    
 form button:hover {
     background-color: #005bb5;
 }
-
-/* Footer Styling */
+    
+    
+    /* Footer Styling */
 footer {
     background-color: #007ced;
     color: #e5e5e5;
     padding: 20px;
     text-align: center;
 }
-
+    
+    
 footer p {
     font-size: 1rem;
 }
-
-/* Ensures consistent margin/padding */
+      
+    /* Ensures consistent margin/padding */
 body, html {
     padding: 0;
     margin: 0;
