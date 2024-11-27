@@ -168,7 +168,67 @@
             backSpeed: 55,
             loop: true
         });
+
+  // Toggle Chatbot Visibility
+function toggleChatbot() {
+    const chatbotBody = document.getElementById("chatbot-body");
+    const toggleButton = document.getElementById("chatbot-toggle");
+
+    if (chatbotBody.style.display === "flex") {
+        chatbotBody.style.display = "none";
+        toggleButton.style.display = "block";
+    } else {
+        chatbotBody.style.display = "flex";
+        toggleButton.style.display = "none";
+    }
+}
+
+// Handle Sending Messages
+function sendMessage(event) {
+    event.preventDefault();
+    const input = document.getElementById("chatbot-input");
+    const message = input.value.trim();
+    if (!message) return;
+
+    // Display User Message
+    const messages = document.getElementById("chatbot-messages");
+    const userMessage = document.createElement("p");
+    userMessage.className = "user";
+    userMessage.textContent = message;
+    messages.appendChild(userMessage);
+
+    // Simulate Bot Reply
+    const botMessage = document.createElement("p");
+    botMessage.className = "bot";
+    botMessage.textContent = "I'm here to help! What do you need?";
+    messages.appendChild(botMessage);
+
+    // Clear Input
+    input.value = "";
+
+    // Scroll to the Bottom
+    messages.scrollTop = messages.scrollHeight;
+}
+
+
+        
     </script>
+<!-- Chatbot Button -->
+<div id="chatbot">
+    <button id="chatbot-toggle" onclick="toggleChatbot()">💬</button>
+    <div id="chatbot-body">
+        <div id="chatbot-header">
+            <span>Chat with me!</span>
+            <button id="chatbot-close" onclick="toggleChatbot()">✕</button>
+        </div>
+        <div id="chatbot-messages"></div>
+        <form id="chatbot-form" onsubmit="sendMessage(event)">
+            <input type="text" id="chatbot-input" placeholder="Type a message..." required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</div>
+
 
 </body>
 </html>
