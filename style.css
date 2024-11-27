@@ -139,85 +139,93 @@ header {
     color: #fff;
 }
 
-/* Navigation Links */
+/* Fixed Navigation Bar */
 nav {
-    position: absolute; /* Absolute positioning */
-    top: 0; /* Place it at the very top */
-    left: 50%; /* Align horizontally */
-    transform: translateX(-50%); /* Center the navbar */
-    z-index: 1000; /* Keep it above all content */
-    background-color: #007ced; /* Same color as the footer */
-    padding: 20px 40px; /* Increased padding for better visual effect */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow for separation */
-    border-radius: 10px; /* Optional: Rounded edges for style */
+    position: fixed;  /* Change from absolute to fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 124, 237, 0.95);  /* Slightly transparent background */
+    padding: 15px 40px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Add padding to the body to prevent content from hiding behind fixed navbar */
+body {
+    padding-top: 60px;  /* Adjust this value based on your navbar height */
+}
+
+/* Adjust hero section to account for fixed navbar */
+.hero-header {
+    margin-top: -60px;  /* Negative margin to offset body padding */
+}
+
+/* Make sure other sections flow correctly */
+.section-bg {
+    margin-top: 0;
+}
+
+/* Enhanced navbar styling */
+.navlinks {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.3s ease; /* Smooth animation for changes */
-}
-
-/* Navigation Links */
-.navlinks {
-    list-style: none;
-    display: flex;
-    justify-content: center; 
-    margin: 0;
-    padding: 0;
-}
-
-.navlinks li {
-    margin: 0 15px; /* Adds spacing between links */
+    gap: 30px;
 }
 
 .navlinks li a {
-    color: #e5e5e5; /* Matches footer text color */
-    font-size: 1rem;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
+    color: #ffffff;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 .navlinks li a:hover {
-    color: #ffffff; /* Slight hover effect */
+    color: #222;
 }
 
-/* Mobile View */
+/* Hide menu toggle button by default */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Mobile View Styles */
 @media (max-width: 768px) {
-    nav {
-        width: 100%; /* Full-width for small screens */
-        left: 0;
-        transform: none; /* Remove centering on mobile */
-        border-radius: 0; /* Remove rounded edges */
-        padding: 10px 20px;
+    .menu-toggle {
+        display: block; /* Show menu toggle button on mobile */
     }
 
     .navlinks {
-        flex-direction: column; /* Stack items vertically */
-        justify-content: flex-start; /* Align items to the left */
+        display: none; /* Hide navigation links by default on mobile */
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: rgba(0, 124, 237, 0.95);
+        padding: 20px;
     }
 
-    .navlinks li {
-        padding: 10px 0;
+    .navlinks.show {
+        display: flex; /* Show navigation links when .show class is added */
+    }
+
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        margin-top: 30px;
     }
 }
 
-    .navlinks a {
-        font-size: 18px;
-    }
 
-    .menu-toggle .menu-icon,
-    .menu-toggle .close-icon {
-        transition: all 0.3s ease;
-    }
-
-    .menu-toggle.active .menu-icon {
-        display: none;
-    }
-
-    .menu-toggle.active .close-icon {
-        display: inline !important;
-    }
-
-}
 
 /* About Me Section */
 #about {
