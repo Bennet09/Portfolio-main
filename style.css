@@ -80,16 +80,14 @@ body {
     
     /* Social Icons in Section Background */
     /* Section Background Styling */
-.section-bg {
-    width: 100%;
-    height: 100vh; /* Full-screen height */
-    background: #222; /* Dark background similar to the hero section */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative; /* To allow content to be centered */
-    color: #fff; /* Make sure the text stands out on the dark background */
-}
+    /* Section spacing */
+    .section-bg {
+        width: 100%;
+        min-height: 100vh;
+        background: #222;
+        padding: 80px 0;
+        margin-bottom: 40px;
+    }
   
     
     /* Social Icons in Section Background */
@@ -242,6 +240,11 @@ body {
     }
 }
 
+#about {
+    display: block; /* Changed from 'none' to 'block' */
+    padding-top: 120px; /* Increased padding for better spacing */
+    scroll-margin-top: 60px; /* Accounts for fixed navbar when scrolling */
+}
 
  /* About section spacing */
 .about-content {
@@ -263,16 +266,11 @@ body {
     margin-top: -60px;
 }
 
-    /* About Me Section */
-#about {
-    padding: 50px 20px;
-    background-color: #222; /* Same as hero section background */
-    }
-    
-    
+       
 #about h2 {
     text-align: left;
     margin-bottom: 20px;
+    color: #e5e5e5;
     font-size: 2rem;
     }
     
@@ -382,26 +380,69 @@ body {
     object-fit: cover; /* Crop the image to fit the circle */
     }
   
-    /* Resume section spacing */
+#contact {
+    color: #fff;
+}
+
+  /* Resume Section Enhancements */
+  #resume {
+    padding-top: 120px; /* Increased padding to move content down */
+    margin-top: -60px;
+}
+
 .resume-content {
-    padding: 30px 0;
-} 
-    
-    /* Resume Section */
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    height: calc(100vh - 160px); /* Account for padding */
+    overflow-y: auto;
+}
+
+.resume-content h2 {
+    color: #007ced;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
 .resume-content h3 {
-    margin: 30px 0 20px 0;
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 20px 0 15px;
 }
-    
-    
-.resume-content ul {
-    margin: 20px 0;
-    padding-left: 40px;
-}
-       
+
+
 .resume-content ul li {
-    margin-bottom: 15px;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 20px;
+    color: #e5e5e5;
+    line-height: 1.6;
 }
+
+.resume-content ul li::before {
+    content: "•";
+    color: #007ced;
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+}
+
+/* Resume Section Responsive Design */
+@media (max-width: 768px) {
+    .resume-content {
+        padding: 20px;
+        gap: 30px;
+    }
     
+    .resume-content h2 {
+        font-size: 2rem;
+    }
+    
+    .resume-content h2 {
+        font-size: 1.5rem;
+    }
+}
+
     
     /* Contact Section */
 form {
@@ -464,4 +505,8 @@ footer p {
 body, html {
     padding: 0;
     margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
