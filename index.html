@@ -174,8 +174,11 @@
 function toggleChatbot() {
     const chatbotBody = document.getElementById("chatbot-body");
     const toggleButton = document.getElementById("chatbot-toggle");
-
-    if (chatbotBody.style.display === "flex") {
+    
+    // Get the computed style to check actual display value
+    const computedStyle = window.getComputedStyle(chatbotBody);
+    
+    if (computedStyle.display !== "none") {
         chatbotBody.style.display = "none";
         toggleButton.style.display = "block";
     } else {
@@ -183,6 +186,19 @@ function toggleChatbot() {
         toggleButton.style.display = "none";
     }
 }
+
+
+// Open Portfolio and Close Chatbot
+function openPortfolio() {
+        document.getElementById("portfolio-content").style.display = "block";
+        document.getElementById("chatbot-body").style.display = "none";
+        document.getElementById("chatbot-toggle").style.display = "block";
+    }
+
+    // Close Portfolio
+    function closePortfolio() {
+        document.getElementById("portfolio-content").style.display = "none";
+    }
 
 // Handle Sending Messages
 function sendMessage(event) {
