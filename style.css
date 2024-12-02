@@ -612,9 +612,9 @@ html {
 
 #chatbot-messages {
     flex: 1;
-    padding: 10px;
     overflow-y: auto;
-    background-color: #333;
+    padding: 10px;
+    max-height: 300px; /* Adjust this value as needed */
 }
 
 #chatbot-messages p {

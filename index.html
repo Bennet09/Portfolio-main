@@ -225,7 +225,7 @@ function openPortfolio() {
 function sendMessage(event) {
     event.preventDefault();
     const input = document.getElementById("chatbot-input");
-    const message = input.value.trim();
+    const message = input.value.trim().toLowerCase();
     if (!message) return;
 
     // Display User Message
@@ -235,16 +235,32 @@ function sendMessage(event) {
     userMessage.textContent = message;
     messages.appendChild(userMessage);
 
-    // Simulate Bot Reply
+    // Bot Response Logic
     const botMessage = document.createElement("p");
     botMessage.className = "bot";
-    botMessage.textContent = "Hi there, I'm Bennet's AI chatbot how can I assist you?";
+
+    // Define responses for different types of questions
+    if (message.includes("project") || message.includes("birdscout") || message.includes("medicalsuit") || message.includes("sneakersnap")) {
+        botMessage.textContent = "I've worked on several projects including BirdScout (a bird tracking app), MedicalSuite (a medical appointment system), and SneakerSnap (a sneaker collection tracker). Which one would you like to know more about?";
+    } 
+    else if (message.includes("education") || message.includes("study")) {
+        botMessage.textContent = "I completed my Diploma in IT in Software Development from IIE Rosebank College (2021-2023) and obtained my National Senior Certificate (2016-2020).";
+    }
+    else if (message.includes("skill") || message.includes("technology")) {
+        botMessage.textContent = "My technical skills include HTML, CSS, JavaScript, MySQL, Java, C#, Kotlin, ASP.Net, and PHP. I also have strong soft skills in communication, teamwork, and problem-solving.";
+    }
+    else if (message.includes("contact") || message.includes("email") || message.includes("reach")) {
+        botMessage.textContent = "You can reach me at ramphisabennet@gmail.com or through the contact form on my portfolio website.";
+    }
+    else if (message.includes("hello") || message.includes("hi") || message.includes("hey")) {
+        botMessage.textContent = "Hello! I'm Bennet's AI chatbot. How can I assist you today?";
+    }
+    else {
+        botMessage.textContent = "I apologize, but I can only answer questions about Bennet's education, skills, projects, and contact information. Please feel free to ask about those topics!";
+    }
+
     messages.appendChild(botMessage);
-
-    // Clear Input
     input.value = "";
-
-    // Scroll to the Bottom
     messages.scrollTop = messages.scrollHeight;
 }
 
