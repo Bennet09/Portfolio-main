@@ -128,18 +128,19 @@ header {
 }
        
 .logo i {
-    height: 35px; /* Smaller icon size */
-    width: 35px; /* Smaller icon size */
+    height: 40px;/* Increased height */
+    width: 42px;/* Increased width */
     background-color: #007ced;
-    border-radius: 50%;
+    border-radius: 64%;
     color: #fff;
     font-weight: 700;
-    font-size: 1.25rem; /* Adjust font size */
-    padding: 8px; /* Adjust padding */
+    font-size: 1.4rem;/* Increased font size */
+    padding: 8px 10px;/* Adjusted padding for better letter spacing */
     margin-right: 5px;
     cursor: pointer;
     text-align: center;
 }
+
       
 /* Logo Text Styling */
 .logo .logo-text {
@@ -148,6 +149,32 @@ header {
    color: #fff;
 }
     
+@media (max-width: 768px) {
+    .logo {
+        position: relative;
+        z-index: 1001;
+        margin-top: 100px; /* Increased from 70px to create more space */
+    }
+
+    .container {
+        padding-top: 6rem; /* Increased from 4rem to push content down further */
+    }
+
+    nav {
+        z-index: 1000;
+    }
+
+    .hero-header {
+        padding-top: 60px; /* Increased from 40px */
+        margin-top: 20px; /* Added to create additional space */
+    }
+
+    .hero-pic {
+        margin-top: 40px; /* Added to push the image down */
+    }
+}
+
+
     
 /* Fixed Navigation Bar */
 nav {
@@ -185,6 +212,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 30px;
+    list-style: none; /* Add this line to remove bullet points */
 }
     
     
