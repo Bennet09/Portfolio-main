@@ -598,8 +598,6 @@ html {
     color: inherit; /* This will make the icon change color with the parent */
 }
 
-
-
 #chatbot-header {
     background-color: #007ced;
     padding: 10px;
@@ -620,6 +618,32 @@ html {
     font-size: 1.2rem;
     cursor: pointer;
 }
+
+/* Add these new styles for the greeting message */
+#chatbot-messages::before {
+    content: "👋 Hi there! How can I help you today?";
+    display: block;
+    color: #fff;
+    background-color: #555;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    max-width: 80%;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 #chatbot-messages {
     flex: 1;
